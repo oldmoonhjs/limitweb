@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="oscatche"
+  id="myeclipse.1464261337193"
+  context-root="/oscatche"
+  j2ee-spec="6.0"
+  archive="oscatche.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+<jsp-config> 
+	<taglib>  
+		<taglib-uri>oscache</taglib-uri>  
+		<taglib-location>/WEB-INF/classes/oscache.tld</taglib-location>  
+	</taglib>
+</jsp-config>
+
+
+  <filter>     
+    <filter-name>CacheFilter</filter-name>     
+    <filter-class>com.opensymphony.oscache.web.filter.CacheFilter</filter-class>      
+    <!-- 设置缓存时间 -->  
+    <init-param>      
+        <param-name>time</param-name>     
+        <param-value>600</param-value>     
+    </init-param>      
+    <!-- 设置作用范围 -->  
+    <init-param>       
+       <param-name>scope</param-name>      
+       <param-value>session</param-value>     
+    </init-param>      
+</filter>       
+<filter-mapping>       
+    <filter-name>CacheFilter</filter-name>  
+    <!--对页面 main.jsp 进行缓存     -->
+    <url-pattern>/main.jsp</url-pattern>    
+    <!--对所有jsp页面内容进行缓存   
+    <url-pattern>*.jsp</url-pattern>      --> 
+</filter-mapping>
+
+
+</web-app>
